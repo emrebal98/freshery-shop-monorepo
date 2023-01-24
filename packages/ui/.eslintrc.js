@@ -5,5 +5,5 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',
   },
-  ignorePatterns: ['.next', '.turbo'],
+  ignorePatterns: ['dist'],
 };

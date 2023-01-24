@@ -1,9 +1,9 @@
 module.exports = {
   root: true,
-  extends: ['custom'],
+  extends: ['custom-server'],
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',
   },
-  ignorePatterns: ['.next', '.turbo'],
+  ignorePatterns: ['dist'],
 };

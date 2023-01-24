@@ -1,19 +1,22 @@
 module.exports = {
   env: {
-    browser: true,
     node: true,
+    es6: true,
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['turbo', '@typescript-eslint', 'prettier'],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint', 'prettier'],
   extends: [
-    'next/core-web-vitals',
-    'turbo',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'airbnb',
     'airbnb-typescript',
     'prettier',
   ],
+  // ignorePatterns: ['**/*.js', 'node_modules', '.turbo', 'dist', 'coverage'],
   rules: {
     'prettier/prettier': ['error', { singleQuote: true }],
     'sort-imports': [
@@ -40,9 +43,15 @@ module.exports = {
         },
       },
     ],
-    'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/consistent-type-imports': 'warn',
-    '@next/next/no-html-link-for-pages': 'off',
   },
+  // env: {
+  //   node: true,
+  //   es6: true,
+  // },
+  // parserOptions: {
+  //   ecmaVersion: 'latest',
+  //   sourceType: 'module',
+  // },
 };

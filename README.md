@@ -8,10 +8,13 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `web`: a [Next.js](https://nextjs.org/) app
+- `api`: an [Express](https://expressjs.com/) app
+- `ui`: a React component library shared between applications
+- `database`: database with `prisma`
+- `logger`: a shared logging library with using `pino`
+- `eslint-config-custom`: `eslint` configurations for client applications
+- `eslint-config-custom-server`: `eslint` configurations for servcer applications
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).

@@ -16,7 +16,6 @@ module.exports = {
     'airbnb-typescript',
     'prettier',
   ],
-  // ignorePatterns: ['**/*.js', 'node_modules', '.turbo', 'dist', 'coverage'],
   rules: {
     'prettier/prettier': ['error', { singleQuote: true }],
     'sort-imports': [
@@ -46,12 +45,4 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/consistent-type-imports': 'warn',
   },
-  // env: {
-  //   node: true,
-  //   es6: true,
-  // },
-  // parserOptions: {
-  //   ecmaVersion: 'latest',
-  //   sourceType: 'module',
-  // },
 };

@@ -8,12 +8,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['turbo', '@typescript-eslint', 'prettier'],
   extends: [
+    'turbo',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'airbnb',
-    'airbnb-typescript',
+    'airbnb-base',
+    'airbnb-typescript/base',
     'prettier',
   ],
   rules: {

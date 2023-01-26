@@ -13,6 +13,9 @@ coverage
 out/
 build
 
+# vscode
+.vscode
+
 # build
 dist
 

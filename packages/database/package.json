@@ -14,7 +14,8 @@
     "dev": "tsup --watch",
     "lint": "tsc --noEmit && eslint \"src/**/*.ts*\"",
     "db:generate": "prisma generate",
-    "db:push": "prisma db push --skip-generate"
+    "db:push": "prisma db push --skip-generate",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^4.9.0",

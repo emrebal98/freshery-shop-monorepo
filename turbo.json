@@ -8,8 +8,8 @@
     },
     "api#build": {
       "dependsOn": ["^build", "^db:generate"],
-      "outputs": ["dist/**", ".next/**"],
-      "env": ["API_PORT"]
+      "outputs": ["dist/**"],
+      "env": ["API_PORT", "JWT_SECRET"]
     },
     "dev": {
       "dependsOn": ["^db:generate"],

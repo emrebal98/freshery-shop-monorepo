@@ -6,8 +6,10 @@ import { z } from 'zod';
  */
 export const serverSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']),
-  API_PORT: z.string().regex(/^\d+$/),
+  API_PORT: z.string().regex(/^\d+$/).optional(), // port number
   JWT_SECRET: z.string(),
+  JWT_TOKEN_EXPIRES_IN: z.string().regex(/^\d+$/), // seconds,
+  JWT_REFRESH_TOKEN_EXPIRES_IN: z.string().regex(/^\d+$/), // seconds,
 });
 
 /**

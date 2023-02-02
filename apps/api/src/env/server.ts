@@ -1,5 +1,5 @@
 import logger from 'logger';
-import { getValidationMessage } from '../utils';
+import getValidationMessage from '../utils/getValidationMessage';
 import { serverEnv, serverSchema } from './schema';
 
 const sEnv = serverSchema.safeParse(serverEnv);

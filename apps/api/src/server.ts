@@ -1,3 +1,4 @@
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express, { type Express } from 'express';
 import logger from 'logger';
@@ -14,6 +15,7 @@ const createServer: () => Express = () => {
         origin: ['http://localhost:3000'],
       })
     )
+    .use(cookieParser())
     .use(
       pino({
         logger,

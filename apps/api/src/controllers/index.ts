@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
-export { default as userController } from './user.controller';
+export { default as usersController } from './users.controller';
+export { default as authController } from './auth.controller';

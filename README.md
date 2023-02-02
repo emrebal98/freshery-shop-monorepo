@@ -13,7 +13,7 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 - `ui`: a React component library shared between applications
 - `database`: database with `prisma`
 - `logger`: a shared logging library with using `pino`
-- `eslint-config-*`: `eslint` configurations applications
+- `eslint-config-*`: `eslint` configurations for applications
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).

@@ -3,7 +3,7 @@ import cors from 'cors';
 import express, { type Express } from 'express';
 import logger from 'logger';
 import pino from 'pino-http';
-import routes from './routes';
+import routesV1 from './routes/v1';
 
 const createServer: () => Express = () => {
   const app = express();
@@ -50,7 +50,7 @@ const createServer: () => Express = () => {
       })
     )
     // Routes
-    .use('/api/v1/', routes);
+    .use('/api/v1/', routesV1);
 
   return app;
 };

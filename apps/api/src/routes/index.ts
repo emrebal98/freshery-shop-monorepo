@@ -1,10 +1,3 @@
-import express, { type Router } from 'express';
-import authRoute from './auth.route';
-import usersRoute from './users.route';
-
-const router: Router = express.Router();
-
-router.use('/users', usersRoute);
-router.use('/auth', authRoute);
-
-export default router;
+export { default as authRoute } from './auth.route';
+export { default as usersRoute } from './users.route';
+export { default as productsRoute } from './products.route';

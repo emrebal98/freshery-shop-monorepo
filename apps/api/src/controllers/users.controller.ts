@@ -2,7 +2,7 @@ import { prisma } from 'database';
 import type { Request } from 'express';
 import type { CustomResponse } from '../types/auth';
 
-const userController = {
+const usersController = {
   /**
    * Get the current user
    * @param req Request
@@ -11,26 +11,27 @@ const userController = {
    */
   getMe: async (req: Request, res: CustomResponse) => {
     try {
-      if (!req.user)
-        return res.status(401).json({
-          error: 'Unauthorized',
-          message: 'Unauthorized access.',
-        });
-      const { id } = req.user;
+      const { id } = req.payload;
       const user = await prisma.user.findUnique({
         where: {
           id,
         },
       });
-      if (!user) return res.status(404).json({ message: 'User not found' });
+      if (!user)
+        return res
+          .status(404)
+          .json({ error: 'NotFound', message: 'User not found.' });
       return res.status(200).json({
         message: 'User found',
         data: { email: user.email, name: user.name },
       });
     } catch (error) {
-      return res.status(500).json({ message: 'Something went wrong' });
+      return res.status(500).json({
+        error: 'InternalServerError',
+        message: 'Something went wrong.',
+      });
     }
   },
 };
 
-export default userController;
+export default usersController;

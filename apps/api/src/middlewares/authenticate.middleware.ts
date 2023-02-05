@@ -20,9 +20,11 @@ const authenticate = (
     // Verify the token
     const decoded = <Payload>jwt.verify(token, env.JWT_SECRET);
     // Set the user in the request
-    req.user = decoded;
+    req.payload = decoded;
     return next();
   } catch (error) {
+    // Log the error
+    req.log.error(error);
     // If the token is invalid, return an error
     return res.status(401).json({
       error: 'Unauthorized',

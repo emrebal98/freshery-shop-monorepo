@@ -11,7 +11,7 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 - `web`: a [Next.js](https://nextjs.org/) app
 - `api`: an [Express](https://expressjs.com/) app
 - `ui`: a React component library shared between applications
-- `database`: database with `prisma`
+- `database`: [Prisma](https://www.prisma.io/) ORM wrapper to manage & access the database
 - `logger`: a shared logging library with using `pino`
 - `eslint-config-*`: `eslint` configurations for applications
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo

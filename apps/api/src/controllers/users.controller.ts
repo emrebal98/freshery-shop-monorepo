@@ -1,5 +1,5 @@
-import { prisma } from 'database';
 import type { Request } from 'express';
+import { usersService } from '../services';
 import type { CustomResponse } from '../types/auth';
 
 const usersController = {
@@ -12,11 +12,7 @@ const usersController = {
   getMe: async (req: Request, res: CustomResponse) => {
     try {
       const { id } = req.payload;
-      const user = await prisma.user.findUnique({
-        where: {
-          id,
-        },
-      });
+      const user = await usersService.getOne({ id });
       if (!user)
         return res
           .status(404)

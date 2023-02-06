@@ -4,7 +4,7 @@ import { authenticate, checkUser } from '../middlewares';
 
 const router: Router = express.Router();
 
-router.get('/', productsController.getAll);
+router.get('/', productsController.get);
 router.get('/:slug', productsController.getBySlug);
 router.post('/', authenticate, checkUser, productsController.create);
 router.patch('/:id', authenticate, checkUser, productsController.updateById);

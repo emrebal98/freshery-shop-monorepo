@@ -1,9 +1,11 @@
 import type { User } from 'database';
 import type { Response } from 'express';
 import type { z } from 'zod';
-import type { payloadSchema } from '../schemas/auth.schema';
+import type { payloadSchema, userSchema } from '../schemas/auth.schema';
 
 type Payload = z.infer<typeof payloadSchema>;
+
+type UserData = z.infer<typeof userSchema>;
 
 declare global {
   namespace Express {
@@ -37,7 +39,8 @@ type Errors =
   | 'InternalServerError'
   | 'NotFound'
   | 'Database'
-  | 'Forbidden';
+  | 'Forbidden'
+  | 'UniqueConstraint';
 
 // This is the type of the json method of the response object
 type Send<T = Response> = (body?: ResponseJSON) => T;

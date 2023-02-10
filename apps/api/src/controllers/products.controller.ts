@@ -165,6 +165,28 @@ const productsController = {
       return handleError(error, res);
     }
   },
+  /**
+   * Get all products by category
+   * @param req Request
+   * @param res Response
+   * @returns Response
+   */
+  getAllByCategorySlug: async (req: Request, res: CustomResponse) => {
+    try {
+      // Get the category slug from the request params
+      const { slug } = req.params;
+      // Get all products from the database by category
+      const products = await productsService.get({ category: { slug } });
+      // Return the products
+      return res.status(200).json({
+        message: 'Products found.',
+        data: products,
+      });
+    } catch (error) {
+      req.log.error(error);
+      return handleError(error, res);
+    }
+  },
 };
 
 export default productsController;

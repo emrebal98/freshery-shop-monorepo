@@ -4,11 +4,13 @@ import type { ProductData } from '../types/products';
 const productsService = {
   /**
    * Get all products
+   * @param where Prisma.ProductWhereInput (optional)
    * @returns Products
    */
-  get: async () => {
+  get: async (where?: Prisma.ProductWhereInput) => {
     // Get all products from the database
     const products = await prisma.product.findMany({
+      where,
       include: {
         images: {
           select: { id: true, sort: true, name: true },
@@ -58,6 +60,11 @@ const productsService = {
         stock: productData.stock,
         images: {
           create: productData.images,
+        },
+        category: {
+          connect: {
+            id: productData.categoryId,
+          },
         },
         owner: {
           connect: {

@@ -24,16 +24,18 @@ model User {
 }
 
 model Product {
-  id               String  @id @default(cuid())
-  slug             String  @unique
+  id               String   @id @default(cuid())
+  slug             String   @unique
   name             String
   description      String?
   shortDescription String?
-  price            Decimal @db.Decimal(10, 2)
+  price            Decimal  @db.Decimal(10, 2)
   stock            Int
   images           Image[]
+  categoryId       String
+  category         Category @relation(fields: [categoryId], references: [id])
   ownerId          String
-  owner            User    @relation(fields: [ownerId], references: [id])
+  owner            User     @relation(fields: [ownerId], references: [id])
 }
 
 model Image {
@@ -42,4 +44,11 @@ model Image {
   sort      Int
   productId String
   product   Product @relation(fields: [productId], references: [id])
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String    @unique
+  products Product[]
 }

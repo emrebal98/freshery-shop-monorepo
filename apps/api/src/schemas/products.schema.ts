@@ -19,6 +19,7 @@ const productSchema = z
         })
       )
       .optional(),
+    categoryId: z.string().min(3).max(255),
   })
   .strict();
 

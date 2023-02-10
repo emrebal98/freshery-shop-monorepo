@@ -9,5 +9,7 @@ router.get('/:slug', productsController.getBySlug);
 router.post('/', authenticate, checkUser, productsController.create);
 router.patch('/:id', authenticate, checkUser, productsController.updateById);
 router.delete('/:id', authenticate, checkUser, productsController.deleteById);
+// Filter products by category
+router.get('/category/:slug', productsController.getAllByCategorySlug);
 
 export default router;

@@ -44,5 +44,6 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/consistent-type-imports': 'warn',
     '@next/next/no-html-link-for-pages': 'off',
+    'react/prop-types': 'off',
   },
 };

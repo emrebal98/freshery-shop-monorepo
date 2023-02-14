@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": ["custom"],
+  "parserOptions": {
+    "tsconfigRootDir": "./packages/ui",
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["dist"]
+}

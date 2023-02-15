@@ -2,11 +2,11 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 const buttonStyles = cva(
-  'ui-flex ui-items-center ui-gap-1.5 ui-text-lg ui-font-bold ui-font-display ui-text-white ui-border-2 ui-rounded-xl',
+  'ui-flex ui-items-center ui-gap-1.5 ui-text-lg ui-font-bold ui-font-display ui-border-2 ui-rounded-xl',
   {
     variants: {
       appearance: {
-        primary: 'ui-bg-primary-500 ui-border-primary-600',
+        primary: 'ui-bg-primary-500 ui-text-white ui-border-primary-600',
         outlined: 'ui-border-primary-400 ui-text-gray-900',
         bright: 'ui-bg-gray-400 ui-text-gray-900 ui-border-transparent',
         simple: 'ui-bg-white ui-text-gray-900 ui-border-transparent',

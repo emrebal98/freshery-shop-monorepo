@@ -2,7 +2,7 @@ import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import type { User } from 'database';
 import Head from 'next/head';
 import { useState } from 'react';
-import { Button } from 'ui';
+import { ProductCard } from 'ui';
 
 function Web() {
   const [users, setUsers] = useState<User>();
@@ -26,52 +26,7 @@ function Web() {
       <div>
         <h1 className="bg-red-500">Web</h1>
 
-        <Button
-          icon={{
-            direction: 'left',
-            element: <AcademicCapIcon />,
-          }}
-        >
-          Button
-        </Button>
-        <Button
-          icon={{ direction: 'right', element: <AcademicCapIcon /> }}
-          size="md"
-          onClick={handleClick}
-        >
-          Button
-        </Button>
-        <Button
-          icon={{ direction: 'left', element: <AcademicCapIcon /> }}
-          size="lg"
-          onClick={handleClick}
-        >
-          Button
-        </Button>
-        <div className="h-4" />
-        <Button appearance="outlined">Button</Button>
-        <Button appearance="outlined" size="md" onClick={handleClick}>
-          Button
-        </Button>
-        <Button appearance="outlined" size="lg" onClick={handleClick}>
-          Button
-        </Button>
-        <div className="h-4" />
-        <Button appearance="bright">Button</Button>
-        <Button appearance="bright" size="md" onClick={handleClick}>
-          Button
-        </Button>
-        <Button appearance="bright" size="lg" onClick={handleClick}>
-          Button
-        </Button>
-        <div className="h-4" />
-        <Button appearance="simple">Button</Button>
-        <Button appearance="simple" size="md" onClick={handleClick}>
-          Button
-        </Button>
-        <Button appearance="simple" size="lg" onClick={handleClick}>
-          Button
-        </Button>
+        <ProductCard />
         <p>
           {/* eslint-disable-next-line no-nested-ternary */}
           {loading

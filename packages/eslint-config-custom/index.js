@@ -1,5 +1,5 @@
 module.exports = {
-  env: {    
+  env: {
     node: true,
   },
   parser: '@typescript-eslint/parser',
@@ -38,8 +38,18 @@ module.exports = {
         },
       },
     ],
+    'import/extensions': [
+      'error',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/consistent-type-imports': 'warn',
-    "@typescript-eslint/no-var-requires": "off"
+    '@typescript-eslint/no-var-requires': 'off',
   },
 };

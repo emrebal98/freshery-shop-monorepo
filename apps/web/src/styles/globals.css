@@ -2,5 +2,17 @@
 @tailwind utilities;
 
 html {
-  @apply font-body;
+  @apply font-body bg-gray-300;
+}
+
+body {
+  @apply container mx-auto shadow-md bg-white;
+}
+#__next {
+  /* To fill the space when there is not enough content */
+  @apply flex min-h-screen flex-col;
+}
+main {
+  /* To fill the space when there is not enough content */
+  @apply flex-1;
 }

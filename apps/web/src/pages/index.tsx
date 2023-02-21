@@ -1,18 +1,19 @@
-import { AcademicCapIcon } from '@heroicons/react/24/solid';
-import type { User } from 'database';
+// import { AcademicCapIcon } from '@heroicons/react/24/solid';
+import type { Product } from 'database';
+import { IcActionsAdd, IcActionsStar, IcEcommerceBasket } from 'icons';
 import Head from 'next/head';
 import { useState } from 'react';
-import { ProductCard, Tag } from 'ui';
+import { Button, ProductCard, Tag } from 'ui';
 
 function Web() {
-  const [users, setUsers] = useState<User>();
+  const [data, setData] = useState<Product>();
   const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
     setLoading(true);
-    const response = await fetch('http://localhost:3333/api/v1/users');
-    const data: User = await response.json();
-    setUsers(data);
+    const response = await fetch('http://localhost:3333/api/v1/products');
+    const d: Product = await response.json();
+    setData(d);
     setLoading(false);
   };
 
@@ -25,22 +26,28 @@ function Web() {
       </Head>
       <div>
         <h1 className="bg-red-500">Web</h1>
+        <div className="flex">
+          <IcActionsStar className=" w-4 h-4 fill-gray-900" />
+          <IcActionsStar className="text-gray-500 w-4 h-4 " />
+        </div>
 
+        <IcEcommerceBasket className="text-red-500 w-16 h-16 " />
+        <IcActionsAdd className="text-brown-500 w-16 h-16 " />
         <ProductCard
           title="Product"
           description="Somde description"
           price={39.99}
           oldPrice={49.99}
           currency="USD"
-          rating={5}
+          rating={3}
         />
         <Tag text="Tag" appearance="secondary" size="sm" isCloseable />
         <p>
           {/* eslint-disable-next-line no-nested-ternary */}
           {loading
             ? 'Loading...'
-            : users
-            ? JSON.stringify(users, null, 2)
+            : data
+            ? JSON.stringify(data, null, 2)
             : 'Click to fetch users'}
         </p>
       </div>

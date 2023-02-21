@@ -2,7 +2,7 @@ import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html>
+    <Html >
       <Head>
         {/* Font */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className='container mx-auto'>
+      <body >
         <Main />
         <NextScript />
       </body>

@@ -16,7 +16,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className='container mx-auto'>
         <Main />
         <NextScript />
       </body>

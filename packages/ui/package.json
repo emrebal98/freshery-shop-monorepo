@@ -3,28 +3,32 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
+  "exports": {
+    ".": "./dist",
+    "./styles.css": "./dist/index.css"
+  },
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build": "tsup",
     "clean": "rm -rf dist",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "dev": "tsup --watch",
     "lint": "tsc --noEmit && eslint \"src/**/*.ts*\""
   },
   "dependencies": {
+    "class-variance-authority": "^0.4.0",
     "react": "^18.2.0",
-    "tsup": "^6.5.0"
+    "tailwind-config": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.13",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
+    "postcss": "^8.4.21",
+    "prettier-plugin-tailwindcss": "^0.2.2",
     "tsconfig": "workspace:*",
+    "tsup": "^6.5.0",
     "typescript": "^4.5.2"
   }
 }

@@ -2,7 +2,7 @@ import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import type { User } from 'database';
 import Head from 'next/head';
 import { useState } from 'react';
-import { ProductCard } from 'ui';
+import { ProductCard, Tag } from 'ui';
 
 function Web() {
   const [users, setUsers] = useState<User>();
@@ -26,7 +26,15 @@ function Web() {
       <div>
         <h1 className="bg-red-500">Web</h1>
 
-        <ProductCard />
+        <ProductCard
+          title="Product"
+          description="Somde description"
+          price={39.99}
+          oldPrice={49.99}
+          currency="USD"
+          rating={5}
+        />
+        <Tag text="Tag" appearance="secondary" size="sm" isCloseable />
         <p>
           {/* eslint-disable-next-line no-nested-ternary */}
           {loading

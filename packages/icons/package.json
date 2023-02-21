@@ -1,0 +1,26 @@
+{
+  "name": "icons",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.mjs"
+  },
+  "scripts": {
+    "prebuild": "pnpx @svgr/cli --no-dimensions -- assets",
+    "build": "tsup",
+    "clean": "rm -rf dist",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^6.5.1",
+    "@types/react": "^18.0.17",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.5.0",
+    "typescript": "^4.5.2"
+  }
+}

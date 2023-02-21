@@ -1,0 +1,7 @@
+{
+  "outDir": "src",
+  "typescript": true,
+  "replaceAttrValues": {
+    "#151515": "currentColor"
+  }
+}

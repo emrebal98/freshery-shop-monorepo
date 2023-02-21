@@ -1,4 +1,15 @@
-import Link from 'next/link';
+import NextLink from './next-link';
+
+const links = [
+  { href: '/bakery', label: 'Bakery' },
+  { href: '/fruit-and-vegetables', label: 'Fruit and vegetables' },
+  { href: '/meat-and-fish', label: 'Meat and fish' },
+  { href: '/drinks', label: 'Drinks' },
+  { href: '/kitchen', label: 'Kitchen' },
+  { href: '/special-nutrition', label: 'Special nutrition' },
+  { href: '/baby', label: 'Baby' },
+  { href: '/pharmacy', label: 'Pharmacy' },
+];
 
 export default function Header() {
   return (
@@ -10,19 +21,11 @@ export default function Header() {
       </div>
       <nav className="flex py-4 px-11 bg-gray-300">
         <ul className="flex gap-10 items-center">
-          <li>
-            <Link href="todo" passHref legacyBehavior>
-              <a
-                className="font-display font-medium text-lg text-gray-900"
-                href="replace"
-              >
-                Bakery
-              </a>
-            </Link>
-          </li>
-          <li className="w-[100px] h-[50px] bg-primary-400">SHOP</li>
-          <li className="w-[100px] h-[50px] bg-primary-400">ABOUT</li>
-          <li className="w-[100px] h-[50px] bg-primary-400">CONTACT</li>
+          {links.map((link) => (
+            <li key={link.href}>
+              <NextLink href={link.href}>{link.label}</NextLink>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

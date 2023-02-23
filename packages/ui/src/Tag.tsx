@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from 'class-variance-authority';
+import { IcActionsCloseSimple } from 'icons';
 
 const tagStyles = cva(
   'ui-inline-flex ui-items-center ui-rounded-xl ui-border ui-gap-1',
@@ -21,12 +22,12 @@ const tagStyles = cva(
   }
 );
 
-const iconStyles = cva('ui-h-3 ui-w-3', {
+const iconStyles = cva('ui-h-3 ui-w-3 ui-transition-colors', {
   variants: {
     appearance: {
-      primary: 'ui-stroke-primary-300',
-      secondary: 'ui-stroke-gray-600',
-      border: 'ui-stroke-gray-600',
+      primary: 'ui-text-primary-300 hover:ui-text-primary-500',
+      secondary: 'ui-text-gray-600 hover:ui-text-gray-900',
+      border: 'ui-text-gray-600 hover:ui-text-gray-900',
     },
     defaultVariants: {
       appearance: 'primary',
@@ -51,27 +52,7 @@ export default function Tag({
       <p className="ui-font-display ui-text-sm ui-font-semibold">{text}</p>
       {isCloseable && (
         <button className="ui-flex ui-items-center">
-          <svg
-            className={iconStyles({ ...props })}
-            viewBox="0 0 12 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.17995 9.18007L2.81995 2.82007"
-              stroke="inherit"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="bevel"
-            />
-            <path
-              d="M9.17995 2.82007L2.81995 9.18007"
-              stroke="inherit"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="bevel"
-            />
-          </svg>
+          <IcActionsCloseSimple className={iconStyles({ ...props })} />
         </button>
       )}
     </div>

@@ -26,6 +26,7 @@
     "eslint": "7.32.0",
     "eslint-config-custom-next": "workspace:*",
     "postcss": "^8.4.21",
+    "prettier-plugin-tailwindcss": "^0.2.2",
     "tailwind-config": "workspace:*",
     "tailwindcss": "^3.2.6",
     "tsconfig": "workspace:*",
